@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
+
+:root {
+  --green: #21875f;
+  --green-dark: #123d31;
+  --green-2: #3f9660;
+  --green-light: #e9f5ef;
+  --yellow: #f7d34a;
+  --yellow-light: #fff7d5;
+  --text: #17332b;
+  --muted: #71807a;
+  --line: #dfe8e3;
+  --bg: #f7faf8;
+  --white: #fff;
+  --shadow: 0 20px 60px rgba(18, 61, 49, 0.09);
+  --radius: 16px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: "Plus Jakarta Sans", "DM Sans", sans-serif;
+  letter-spacing: 0;
+}
+
+.app-page .section-card,
+.app-page .stat-card,
+.app-page .dashboard-card,
+.app-page .today-banner {
+  border-radius: 14px;
+}
+
+.goal-page {
+  min-height: 100vh;
+}
+
+.goal-content {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.goal-content .section-card {
+  margin-top: 18px;
+}
+
+.goal-intro {
+  margin-bottom: 20px;
+}
+
+.goal-intro h1 {
+  margin: 6px 0;
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.goal-intro p,
+.goal-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.goal-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.goal-option {
+  position: relative;
+  min-height: 136px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.goal-option:has(input:checked) {
+  border-color: var(--green);
+  background: var(--green-light);
+  box-shadow: 0 0 0 2px rgba(33, 135, 95, 0.1);
+}
+
+.goal-option input {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  accent-color: var(--green);
+}
+
+.goal-option b,
+.goal-option small {
+  display: block;
+}
+
+.goal-option b {
+  margin: 24px 0 5px;
+  font-size: 13px;
+}
+
+.goal-option small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.goal-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.goal-form-grid label {
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.goal-form-grid input,
+.goal-form-grid select {
+  display: block;
+  width: 100%;
+  height: 46px;
+  margin-top: 7px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--text);
+}
+
+.goal-form-grid input:focus,
+.goal-form-grid select:focus {
+  border-color: var(--green);
+  outline: 3px solid rgba(33, 135, 95, 0.12);
+}
+
+.goal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.goal-actions .btn {
+  border: 0;
+  cursor: pointer;
+}
+
+.goal-success[hidden] {
+  display: none;
+}
+
+.goal-success {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 61, 49, 0.5);
+}
+
+.goal-success-panel {
+  width: min(440px, 100%);
+  padding: 30px;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.goal-success-panel h2 {
+  margin: 10px 0 6px;
+  font-size: 23px;
+}
+
+.goal-success-panel p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.goal-success-check {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 16px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.goal-success-actions {
+  display: grid;
+  gap: 9px;
+}
+
+.nutrition-dialog {
+  width: min(440px, calc(100% - 32px));
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.nutrition-dialog::backdrop {
+  background: rgba(18, 61, 49, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.nutrition-dialog h2 {
+  margin-bottom: 5px;
+  font-size: 21px;
+}
+
+.nutrition-dialog p {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.nutrition-dialog label {
+  display: block;
+  margin: 12px 0;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nutrition-dialog input,
+.nutrition-dialog select {
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin-top: 6px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--white);
+  color: var(--text);
+}
+
+.nutrition-dialog .dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.nutrition-dialog button {
+  cursor: pointer;
+}
+
+.progress-empty-state {
+  position: absolute;
+  inset: 50% 12px auto;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.progress-chart-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.reminder-full.is-disabled {
+  opacity: 0.62;
+}
+
+.reminder-toggle-label {
+  display: grid;
+  flex: 0 0 24px;
+  min-height: 32px;
+  place-items: center;
+  cursor: pointer;
+}
+
+.reminder-toggle-label input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.reminder-remove {
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reminder-remove:hover {
+  border-color: #b54739;
+  color: #b54739;
+}
+
+.reminder-empty {
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.food-empty {
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 480ms ease var(--scroll-reveal-delay, 0ms),
+    transform 480ms ease var(--scroll-reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .goal-options {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-option {
+    min-height: 0;
+  }
+
+  .goal-option b {
+    margin-top: 0;
+  }
+
+  .goal-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-success-panel {
+    padding: 24px;
+  }
+}
